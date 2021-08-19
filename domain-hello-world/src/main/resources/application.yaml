@@ -1,0 +1,19 @@
+camunda.bpm:
+  database:
+    type: postgres
+  admin-user:
+    id: demo
+    password: demo
+    firstName: Demo
+  filter:
+    create: All tasks
+  job-execution:
+    deployment-aware: true
+com:
+  camunda:
+    datasource:
+      jdbc-url: jdbc:postgresql://localhost/camunda
+      username: postgres
+      password: j#EeeztF~55O?068s97tv3I[5l2Qsg
+      driverClassName: org.postgresql.Driver
+      poolName: camunda-pool
