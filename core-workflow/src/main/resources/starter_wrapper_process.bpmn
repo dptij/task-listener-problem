@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1po2n5y" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_1po2n5y" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.4.0">
   <bpmn:process id="Process_0qf4kyd" name="Starter Process" isExecutable="true">
-    <bpmn:startEvent id="StartEvent_1">
+    <bpmn:startEvent id="StartEvent_1" camunda:asyncBefore="true">
       <bpmn:outgoing>Flow_1yxh2gl</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:sequenceFlow id="Flow_1yxh2gl" sourceRef="StartEvent_1" targetRef="Activity_0uz57sz" />
-    <bpmn:endEvent id="Event_16sicv2">
+    <bpmn:endEvent id="Event_16sicv2" camunda:asyncBefore="true">
       <bpmn:incoming>Flow_1yuc2mq</bpmn:incoming>
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_1yuc2mq" sourceRef="Activity_0uz57sz" targetRef="Event_16sicv2" />
-    <bpmn:callActivity id="Activity_0uz57sz" name="Start a process" calledElement="WrapperProcess">
+    <bpmn:callActivity id="Activity_0uz57sz" name="Start a process" camunda:asyncBefore="true" calledElement="WrapperProcess">
       <bpmn:incoming>Flow_1yxh2gl</bpmn:incoming>
       <bpmn:outgoing>Flow_1yuc2mq</bpmn:outgoing>
     </bpmn:callActivity>
